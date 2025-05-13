@@ -4,16 +4,12 @@
 # Sobre o serviço 
 
 
-O serviço Forms-Wefit é uma API RESTful desenvolvida para prenchimento de um formulário de dados de uma pessoa. Ele oferece as seguintes funcionalidades:
-- Cadastro de produtos, categorias e fornecedores
-- Atualização de quantidades e informações
-- Consultas de produtos, categorias e fornecedores
-- Remoção de produtos, categorias e fornecedores
-- Registro de transações de entrada e saída
-- Validação de dados
+O serviço Forms-Wefit é uma API RESTful desenvolvida para prenchimento de um formulário de dados de um Vendedor ou Comprador. Ele oferece as seguintes funcionalidades:
+- Cadastro de vendedores ou comprador
+- Atualização Celular, Telefone ou Email
+- Consultas de vendedores ou compradores
+- Remoção de vendedores ou compradores
 - Segurança e autorização por usuários
-- Auditoria e geração de logs
-- Garantia de integridade no controle de estoque
 
 ## Regras de negócio 
 As regras de negócio do serviço Inventory estão detalhadas na Wiki.
