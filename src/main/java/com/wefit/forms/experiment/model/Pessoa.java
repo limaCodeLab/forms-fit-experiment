@@ -1,5 +1,6 @@
 package com.wefit.forms.experiment.model;
 
+import com.wefit.forms.experiment.model.enums.TipoPessoa;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import java.util.Objects;
 @Getter
 @Entity
 @Table(name = "person")
-public class Person implements Serializable {
+public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -21,6 +22,7 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private Integer tipoPessoa;
     private String cnpj;
     private String cpf;
     private String nome;
@@ -36,9 +38,10 @@ public class Person implements Serializable {
     private String estado;
     private Boolean termosUso;
 
-    public Person() {}
+    public Pessoa() {}
 
-    public Person(String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroCasa, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
+    public Pessoa(Integer tipoPessoa, String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroCasa, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
+        setTipoPessoa(tipoPessoa);
         this.cnpj = cnpj;
         this.cpf = cpf;
         this.nome = nome;
@@ -53,6 +56,11 @@ public class Person implements Serializable {
         this.bairro = bairro;
         this.estado = estado;
         this.termosUso = termosUso;
+    }
+
+    public TipoPessoa setTipoPessoa() {
+        return TipoPessoa.valueOf(this.tipoPessoa);
+
     }
 
     @PrePersist
@@ -72,7 +80,7 @@ public class Person implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Person person = (Person) o;
+        Pessoa person = (Pessoa) o;
         return Objects.equals(id, person.id) && Objects.equals(cnpj, person.cnpj) && Objects.equals(cpf, person.cpf) && Objects.equals(nome, person.nome) && Objects.equals(celular, person.celular) && Objects.equals(telefone, person.telefone) && Objects.equals(email, person.email) && Objects.equals(cep, person.cep) && Objects.equals(logradouro, person.logradouro) && Objects.equals(numeroCasa, person.numeroCasa) && Objects.equals(complemento, person.complemento) && Objects.equals(cidade, person.cidade) && Objects.equals(bairro, person.bairro) && Objects.equals(estado, person.estado) && Objects.equals(termosUso, person.termosUso);
     }
 
