@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Configuration
-@Profile("dev")
-public @interface DevelopmentEnv {
+@Profile("test")
+public @interface TestEnv {
 }

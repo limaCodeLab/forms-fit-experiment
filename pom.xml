@@ -12,23 +12,26 @@
 	<artifactId>experiment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>experiment</name>
+
 	<description>Test for Wefit Backend </description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
+
 	<developers>
-		<developer/>
+		<developer>
+			<id>alan.lima</id>
+			<name>Alan Lima</name>
+			<email>alan.lima@wefit.com.br</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
 	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
 	<properties>
 		<java.version>21</java.version>
+		<modelmapper.version>3.2.1</modelmapper.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -99,6 +102,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${modelmapper.version}</version>
 		</dependency>
 	</dependencies>
 
