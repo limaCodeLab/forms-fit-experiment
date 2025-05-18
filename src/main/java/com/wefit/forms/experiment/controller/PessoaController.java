@@ -4,6 +4,7 @@ package com.wefit.forms.experiment.controller;
 import com.wefit.forms.experiment.dto.PessoaDTO;
 import com.wefit.forms.experiment.model.Pessoa;
 import com.wefit.forms.experiment.service.PessoaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +29,7 @@ public class PessoaController {
 
 
     @PostMapping( headers = "Content-Type=application/json")
-    public ResponseEntity<Pessoa> registrarPessoa(@RequestBody PessoaDTO pessoaDTO) {
+    public ResponseEntity<Pessoa> registrarPessoa(@Valid @RequestBody PessoaDTO pessoaDTO) {
         Pessoa pessoa = service.savePessoa(pessoaDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(pessoa.getId()).toUri();

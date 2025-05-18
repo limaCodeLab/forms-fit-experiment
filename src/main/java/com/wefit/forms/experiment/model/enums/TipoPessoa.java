@@ -8,20 +8,19 @@ public enum TipoPessoa {
     FISICA(1),
     JURIDICA(2);
 
-    private int codigo;
+    private final int codigo;
 
-    TipoPessoa(int code) {
+    TipoPessoa(int codigo) {
         this.codigo = codigo;
     }
 
-//    public static TipoPessoa valueOf(int codigo){
-//        for (TipoPessoa personType : TipoPessoa.values()) {
-//            if (personType.getCodigo() == codigo) {
-//                return personType;
-//            }
-//        }
-//        throw new IllegalArgumentException("Invalid OrderStatus code");
-//    }
-
+    public static TipoPessoa toEnum(Integer codigo) {
+        for (TipoPessoa tipoPessoa : values()){
+            if (tipoPessoa.getCodigo() == codigo) {
+                return tipoPessoa;
+            }
+        }
+        throw new IllegalArgumentException("Código inválido para Tipo Pessoa: " + codigo);
+    }
 
 }

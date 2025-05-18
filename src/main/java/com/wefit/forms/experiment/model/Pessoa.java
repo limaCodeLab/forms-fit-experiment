@@ -1,5 +1,6 @@
 package com.wefit.forms.experiment.model;
 
+import com.wefit.forms.experiment.model.enums.TipoPessoa;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -20,6 +21,9 @@ public class Pessoa implements Serializable {
     @Setter(value = AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Enumerated(EnumType.STRING)
+    private TipoPessoa tipoPessoa;
 
     private String cnpj;
     private String cpf;
@@ -55,17 +59,17 @@ public class Pessoa implements Serializable {
         this.termosUso = termosUso;
     }
 
-//    @PrePersist
-//    @PreUpdate
-//    private void trimFields() {
-//        this.nome = this.nome.trim();
-//        this.email = this.email.trim();
-//        this.logradouro = this.logradouro.trim();
-//        this.complemento = this.complemento.trim();
-//        this.cidade = this.cidade.trim();
-//        this.bairro = this.bairro.trim();
-//        this.estado = this.estado.trim();
-//    }
+    @PrePersist
+    @PreUpdate
+    private void trimFields() {
+        this.nome = this.nome.trim();
+        this.email = this.email.trim();
+        this.logradouro = this.logradouro.trim();
+        this.complemento = this.complemento.trim();
+        this.cidade = this.cidade.trim();
+        this.bairro = this.bairro.trim();
+        this.estado = this.estado.trim();
+    }
 
 
     @Override
