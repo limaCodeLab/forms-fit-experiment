@@ -18,7 +18,7 @@ public class PessoaDTO {
     private Long id;
 
     @JsonDeserialize(using = TipoPessoDeserializer.class)
-    @NotNull(message = "Tipo pessoa inválido, aloque um valor numerico")
+    @NotNull(message = "'Tipopessoa' inexistente ou com valor nulo ou inválido, aloque um valor numerico")
     private TipoPessoa tipoPessoa;
     private String cnpj;
     private String cpf;
