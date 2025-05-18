@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -27,7 +28,15 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ValidationDataException.class)
     public ResponseEntity<StandardError> violationRule (ValidationDataException e, HttpServletRequest request) {
-        String error = "Validation data error";
+        String error = "Erro de validacao de dados";
+        status = HttpStatus.UNPROCESSABLE_ENTITY;
+        StandardError bodyResponseError = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(status).body(bodyResponseError);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<StandardError> violationRule (MethodArgumentNotValidException e, HttpServletRequest request) {
+        String error = "Erro de validacao de dados";
         status = HttpStatus.UNPROCESSABLE_ENTITY;
         StandardError bodyResponseError = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(bodyResponseError);
