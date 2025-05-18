@@ -1,9 +1,7 @@
 package com.wefit.forms.experiment.config;
 
-import com.wefit.forms.experiment.config.environments.HomologEnv;
 import com.wefit.forms.experiment.config.environments.TestEnv;
 import com.wefit.forms.experiment.model.Pessoa;
-import com.wefit.forms.experiment.model.enums.TipoPessoa;
 import com.wefit.forms.experiment.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,7 +16,6 @@ public class TestConfig implements CommandLineRunner {
     public void run(String[] args) throws Exception {
 
         Pessoa pessoa =  new Pessoa(
-                1,
                 "11.111.111/1111-11",
                 "111.111.111-11",
                 "João",

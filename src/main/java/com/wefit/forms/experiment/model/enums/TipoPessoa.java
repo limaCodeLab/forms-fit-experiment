@@ -14,14 +14,14 @@ public enum TipoPessoa {
         this.codigo = codigo;
     }
 
-    public static TipoPessoa valueOf(int codigo){
-        for (TipoPessoa personType : TipoPessoa.values()) {
-            if (personType.getCodigo() == codigo) {
-                return personType;
-            }
-        }
-        throw new IllegalArgumentException("Invalid OrderStatus code");
-    }
+//    public static TipoPessoa valueOf(int codigo){
+//        for (TipoPessoa personType : TipoPessoa.values()) {
+//            if (personType.getCodigo() == codigo) {
+//                return personType;
+//            }
+//        }
+//        throw new IllegalArgumentException("Invalid OrderStatus code");
+//    }
 
 
 }

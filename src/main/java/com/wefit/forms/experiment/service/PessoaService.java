@@ -24,14 +24,11 @@ public class PessoaService {
         return modelMapper.map(pessoaDTO, Pessoa.class);
     }
 
-    @Transactional
-    public Pessoa savePessoa (Pessoa pessoa){
+    public Pessoa savePessoa (PessoaDTO pessoaDTO) {
+        Pessoa pessoa = convertToEntity(pessoaDTO);
         return pessoaRepository.save(pessoa);
     }
 
-    public Pessoa insertPessoa(PessoaDTO pessoaDTO) {
-        return savePessoa(convertToEntity(pessoaDTO));
-    }
 
 
 }

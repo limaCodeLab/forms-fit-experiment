@@ -9,16 +9,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 import java.net.URI;
 
-@RequestMapping("/pessoa")
+@RestController
+@RequestMapping(value = "/pessoa")
 public class PessoaController {
 
+    @Autowired
     final PessoaService service;
 
-    @Autowired
     public PessoaController(PessoaService pessoaService) {
         this.service = pessoaService;
     }
@@ -26,7 +29,7 @@ public class PessoaController {
 
     @PostMapping( headers = "Content-Type=application/json")
     public ResponseEntity<Pessoa> registrarPessoa(@RequestBody PessoaDTO pessoaDTO) {
-        Pessoa pessoa = service.insertPessoa(pessoaDTO);
+        Pessoa pessoa = service.savePessoa(pessoaDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(pessoa.getId()).toUri();
 

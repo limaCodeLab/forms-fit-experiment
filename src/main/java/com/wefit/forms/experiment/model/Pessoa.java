@@ -1,6 +1,5 @@
 package com.wefit.forms.experiment.model;
 
-import com.wefit.forms.experiment.model.enums.TipoPessoa;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -12,7 +11,7 @@ import java.util.Objects;
 @Setter
 @Getter
 @Entity
-@Table(name = "person")
+@Table(name = "tb_person")
 public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,7 +21,6 @@ public class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Integer tipoPessoa;
     private String cnpj;
     private String cpf;
     private String nome;
@@ -40,8 +38,7 @@ public class Pessoa implements Serializable {
 
     public Pessoa() {}
 
-    public Pessoa(Integer tipoPessoa, String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroCasa, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
-        setTipoPessoa(tipoPessoa);
+    public Pessoa( String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroCasa, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
         this.cnpj = cnpj;
         this.cpf = cpf;
         this.nome = nome;
@@ -58,21 +55,38 @@ public class Pessoa implements Serializable {
         this.termosUso = termosUso;
     }
 
-    public TipoPessoa setTipoPessoa() {
-        return TipoPessoa.valueOf(this.tipoPessoa);
+//    @PrePersist
+//    @PreUpdate
+//    private void trimFields() {
+//        this.nome = this.nome.trim();
+//        this.email = this.email.trim();
+//        this.logradouro = this.logradouro.trim();
+//        this.complemento = this.complemento.trim();
+//        this.cidade = this.cidade.trim();
+//        this.bairro = this.bairro.trim();
+//        this.estado = this.estado.trim();
+//    }
 
-    }
 
-    @PrePersist
-    @PreUpdate
-    private void trimFields() {
-        this.nome = this.nome.trim();
-        this.email = this.email.trim();
-        this.logradouro = this.logradouro.trim();
-        this.complemento = this.complemento.trim();
-        this.cidade = this.cidade.trim();
-        this.bairro = this.bairro.trim();
-        this.estado = this.estado.trim();
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", cnpj='" + cnpj + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", celular='" + celular + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", numeroCasa='" + numeroCasa + '\'' +
+                ", complemento='" + complemento + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", estado='" + estado + '\'' +
+                ", termosUso=" + termosUso +
+                '}';
     }
 
     @Override
