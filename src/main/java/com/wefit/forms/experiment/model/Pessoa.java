@@ -33,7 +33,7 @@ public class Pessoa implements Serializable {
     private String email;
     private String cep;
     private String logradouro;
-    private String numeroCasa;
+    private String numeroResidencial;
     private String complemento;
     private String cidade;
     private String bairro;
@@ -42,7 +42,7 @@ public class Pessoa implements Serializable {
 
     public Pessoa() {}
 
-    public Pessoa( String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroCasa, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
+    public Pessoa( String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroResidencial, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
         this.cnpj = cnpj;
         this.cpf = cpf;
         this.nome = nome;
@@ -51,7 +51,7 @@ public class Pessoa implements Serializable {
         this.email = email;
         this.cep = cep;
         this.logradouro = logradouro;
-        this.numeroCasa = numeroCasa;
+        this.numeroResidencial = numeroResidencial;
         this.complemento = complemento;
         this.cidade = cidade;
         this.bairro = bairro;
@@ -84,7 +84,7 @@ public class Pessoa implements Serializable {
                 ", email='" + email + '\'' +
                 ", cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +
-                ", numeroCasa='" + numeroCasa + '\'' +
+                ", numeroCasa='" + numeroResidencial + '\'' +
                 ", complemento='" + complemento + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", bairro='" + bairro + '\'' +
@@ -99,7 +99,7 @@ public class Pessoa implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
 
         Pessoa person = (Pessoa) o;
-        return Objects.equals(id, person.id) && Objects.equals(cnpj, person.cnpj) && Objects.equals(cpf, person.cpf) && Objects.equals(nome, person.nome) && Objects.equals(celular, person.celular) && Objects.equals(telefone, person.telefone) && Objects.equals(email, person.email) && Objects.equals(cep, person.cep) && Objects.equals(logradouro, person.logradouro) && Objects.equals(numeroCasa, person.numeroCasa) && Objects.equals(complemento, person.complemento) && Objects.equals(cidade, person.cidade) && Objects.equals(bairro, person.bairro) && Objects.equals(estado, person.estado) && Objects.equals(termosUso, person.termosUso);
+        return Objects.equals(id, person.id) && Objects.equals(cnpj, person.cnpj) && Objects.equals(cpf, person.cpf) && Objects.equals(nome, person.nome) && Objects.equals(celular, person.celular) && Objects.equals(telefone, person.telefone) && Objects.equals(email, person.email) && Objects.equals(cep, person.cep) && Objects.equals(logradouro, person.logradouro) && Objects.equals(numeroResidencial, person.numeroResidencial) && Objects.equals(complemento, person.complemento) && Objects.equals(cidade, person.cidade) && Objects.equals(bairro, person.bairro) && Objects.equals(estado, person.estado) && Objects.equals(termosUso, person.termosUso);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class Pessoa implements Serializable {
         result = 31 * result + Objects.hashCode(email);
         result = 31 * result + Objects.hashCode(cep);
         result = 31 * result + Objects.hashCode(logradouro);
-        result = 31 * result + Objects.hashCode(numeroCasa);
+        result = 31 * result + Objects.hashCode(numeroResidencial);
         result = 31 * result + Objects.hashCode(complemento);
         result = 31 * result + Objects.hashCode(cidade);
         result = 31 * result + Objects.hashCode(bairro);

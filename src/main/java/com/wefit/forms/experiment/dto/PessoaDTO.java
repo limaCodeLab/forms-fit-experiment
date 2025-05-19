@@ -28,7 +28,7 @@ public class PessoaDTO {
     private String email;
     private String cep;
     private String logradouro;
-    private String numeroCasa;
+    private String numeroResidencial;
     private String complemento;
     private String cidade;
     private String bairro;
