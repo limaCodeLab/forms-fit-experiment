@@ -49,4 +49,10 @@ public class PessoaController {
         return ResponseEntity.ok().body(pessoa);
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deletarPessoa(@PathVariable Long id){
+        service.deletaPessoa(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

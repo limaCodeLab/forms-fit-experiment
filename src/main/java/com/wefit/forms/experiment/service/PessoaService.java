@@ -40,4 +40,13 @@ public class PessoaService {
         return pessoa.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
+    public void deletaPessoa(Long id) {
+        try {
+            findById(id);
+            pessoaRepository.deleteById(id);
+        } catch (ResourceNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
+    }
+
 }
