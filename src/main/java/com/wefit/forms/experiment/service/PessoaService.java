@@ -1,12 +1,16 @@
 package com.wefit.forms.experiment.service;
 
 import com.wefit.forms.experiment.dto.PessoaDTO;
+import com.wefit.forms.experiment.exceptions.ResourceNotFoundException;
 import com.wefit.forms.experiment.model.Pessoa;
 import com.wefit.forms.experiment.repository.PessoaRepository;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PessoaService {
@@ -29,6 +33,11 @@ public class PessoaService {
         return pessoaRepository.save(pessoa);
     }
 
+    public List<Pessoa> findAll() { return pessoaRepository.findAllByOrderByIdAsc(); }
 
+    public Pessoa findById(Long id) {
+        Optional<Pessoa> pessoa = pessoaRepository.findById(id);
+        return pessoa.orElseThrow(() -> new ResourceNotFoundException(id));
+    }
 
 }

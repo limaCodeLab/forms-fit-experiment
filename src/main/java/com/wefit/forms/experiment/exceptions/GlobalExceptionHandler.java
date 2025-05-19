@@ -55,4 +55,12 @@ public class GlobalExceptionHandler {
         StandardError bodyResponseError = new StandardError(Instant.now(), status.value(), error, message, request.getRequestURI());
         return ResponseEntity.status(status).body(bodyResponseError);
     }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<StandardError> resourceNotFound (ResourceNotFoundException e, HttpServletRequest request) {
+        String error = "Recurso não encontrado";
+        status = HttpStatus.NOT_FOUND;
+        StandardError bodyResponseError = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(status).body(bodyResponseError);
+    }
 }

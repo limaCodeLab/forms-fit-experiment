@@ -42,7 +42,8 @@ public class Pessoa implements Serializable {
 
     public Pessoa() {}
 
-    public Pessoa( String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroResidencial, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
+    public Pessoa( Integer tipoPessoa,String cnpj, String cpf, String nome, String celular, String telefone, String email, String cep, String logradouro, String numeroResidencial, String complemento, String cidade, String bairro, String estado, Boolean termosUso) {
+        this.tipoPessoa = TipoPessoa.toEnum(tipoPessoa);
         this.cnpj = cnpj;
         this.cpf = cpf;
         this.nome = nome;
