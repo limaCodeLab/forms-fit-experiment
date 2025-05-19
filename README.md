@@ -5,10 +5,10 @@
 
 O serviço Forms-Wefit é uma API RESTful desenvolvida para prenchimento de um formulário de dados de um Vendedor ou Comprador. Ele oferece as seguintes funcionalidades:
 - Cadastro de vendedores ou comprador
-- Atualização Celular, Telefone ou Email
+- Atualização Celular, Telefone ou Email (🚧 Em Construção )
 - Consultas de vendedores ou compradores
 - Remoção de vendedores ou compradores
-- Segurança e autorização por usuários
+- Segurança e autorização por usuários (🚧 Em Construção )
 
 # Tecnologias utilizadas
 
@@ -21,17 +21,17 @@ O serviço Forms-Wefit é uma API RESTful desenvolvida para prenchimento de um f
 - Postgresql
 
 
-## Testes
+## Testes (🚧 Em Construção )
 - Testes Unitarios: JUnit 5 + Mockito
 - Teste Integracao: Spring Boot Test
 - Teste API: RestAssured e Postman
 
-## Documentações
+## Documentações (🚧 Em Construção )
 - Swagger API
 - Javadoc
 - GitHub Wiki
 
-# Como executar o serviço In-Local
+# Como executar o serviço In-Local (🚧 Em Construção )
 
 Pré-requisitos: Java 21, PostgreSQL
 
