@@ -3,7 +3,6 @@
 
 # Sobre o serviço 
 
-
 O serviço Forms-Wefit é uma API RESTful desenvolvida para prenchimento de um formulário de dados de um Vendedor ou Comprador. Ele oferece as seguintes funcionalidades:
 - Cadastro de vendedores ou comprador
 - Atualização Celular, Telefone ou Email
@@ -11,27 +10,13 @@ O serviço Forms-Wefit é uma API RESTful desenvolvida para prenchimento de um f
 - Remoção de vendedores ou compradores
 - Segurança e autorização por usuários
 
-## Regras de negócio 
-As regras de negócio do serviço Inventory estão detalhadas na Wiki.
-
-Link: 
-
-## Documentações técnicas 
-A respectiva documentação também está disponível na Wiki.
-
-Link: 
-
-SWAGGER API Link : 
-
-## Modelo conceitual
-![Modelo Conceitual](EM CONSTRUCAO)
-
 # Tecnologias utilizadas
 
 ## Back end
 - Java
 - Spring Boot
 - JPA / Hibernate
+- H2 Console (Para testes locais)
 - Maven
 - Postgresql
 
@@ -41,15 +26,10 @@ SWAGGER API Link :
 - Teste Integracao: Spring Boot Test
 - Teste API: RestAssured e Postman
 
-## Integração contínua
-- GitHub Actions
-- Docker
-
 ## Documentações
 - Swagger API
 - Javadoc
 - GitHub Wiki
-- Lucidchart UML
 
 # Como executar o serviço In-Local
 
@@ -60,17 +40,6 @@ Variável  de Ambiente: SPRING_PROFILE
 Valores: 
 - test (Para execução com banco em memória H2 Console)
 - dev (Para execução com banco relacional PostgreeSQL)
-
-```bash
-# clonar repositório
-git clone https://github.com/limaCodeLab/ams-inventory-api.git
-
-# entrar na pasta do projeto back end
-cd xxxxxxxxxxx
-
-# executar o projeto
-mvn spring-boot:run
-```
 
 # Autor
 
